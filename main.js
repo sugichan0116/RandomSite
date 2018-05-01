@@ -2,7 +2,7 @@ $(function() {
   // selector cache
   var
     $dropdownItem = $('.main.container .menu .dropdown .item'),
-    $menuItem     = $('.main.container .menu .item').not($dropdownItem),
+    $menuItem     = $('.main.container .menu a.item, .right.item .item').not($dropdownItem),
     $dropdown     = $('.main.container .menu .ui.dropdown'),
     // alias
     handler = {
@@ -34,4 +34,21 @@ $(function() {
   $menuItem
     .on('click', handler.activate)
   ;
+
+  $.getJSON("./source/history.json", function(json) {
+    let html = "";
+    json.data.forEach(function(value) {
+      console.log(value);
+      html += `<div class="item">
+                <div class="content">
+                  <a class="header">${value.title}</a>
+                  <div class="extra">
+                    ${value.date}
+                  </div>
+                </div>
+              </div>`;
+    });
+    $('#history').append(html);
+  });
+
 });

@@ -1,47 +1,35 @@
 
 <!DOCTYPE html>
 <html lang="ja">
-  <?php require('./head.html'); ?>
+  <?php require('./assets/head.html'); ?>
   <body>
-    <?php include ('./menu.html'); ?>
+    <?php include ('./assets/menu.html'); ?>
+    <style type="text/css">
+      #article {
+        margin: 4em;
+      }
+      .click:hover {
+        letter-spacing: .3em;
+        transition: letter-spacing .5s;
+      }
+    </style>
     <div class="ui main text container" id="article">
-      <div class="ui devider"></div>
-      <div class="ui piled segment">
-        <h2>ホーム</h2>
-        <p>大阪府立大学コンピュータクラブ「コンピュータハウスランダム」の</p>
-        <p>ウェブサイトへようこそ！</p>
-      </div>
-      <div class="ui piled segment">
-        <h2>お問い合わせ</h2>
-        <p>Mail:computer.house.random@gmail.com</p>
-        <p>Twitter:@c_h_random</p>
-      </div>
-      <div class="ui piled segment">
-        <h2>お問い合わせ</h2>
-        <p>Mail:computer.house.random@gmail.com</p>
-        <p>Twitter:@c_h_random</p>
-      </div>
-      <div class="ui piled segment">
-        <h2>お問い合わせ</h2>
-        <p>Mail:computer.house.random@gmail.com</p>
-        <p>Twitter:@c_h_random</p>
-      </div>
-      <div class="ui piled segment">
-        <h2>お問い合わせ</h2>
-        <p>Mail:computer.house.random@gmail.com</p>
-        <p>Twitter:@c_h_random</p>
-      </div>
-      <div class="ui piled segment">
-        <h2>お問い合わせ</h2>
-        <p>Mail:computer.house.random@gmail.com</p>
-        <p>Twitter:@c_h_random</p>
-      </div>
-      <div class="ui piled segment">
-        <h2>お問い合わせ</h2>
-        <p>Mail:computer.house.random@gmail.com</p>
-        <p>Twitter:@c_h_random</p>
-      </div>
-      
+      <?php
+        if(isset($_GET['page'])) {
+          $page = $_GET['page'];
+        } else {
+          $page = "home";
+        }
+        include("./source/$page.html");
+       ?>
     </div>
+    <script type="text/javascript">
+      $('<?php echo "#${page}" ?>')
+        .addClass('active')
+      ;
+      $('title')
+        .prepend("<?php echo "${page}" ?> | ")
+      ;
+    </script>
   </body>
 </html>
