@@ -1,38 +1,50 @@
 [
   {
-    "name" : "白鷺祭 in 2017",
-    "src" : "",
+    "name" : "友好祭 in 2017",
+    "src" : "https://1drv.ms/f/s!Av_iqVFbLIKghiTJ_2ZjsMM2LaO6",
     "works" : [
       {
-        "name" : "Bubble Pop",
-        "image" : "Bubble.png",
-        "meta" : "作者 : Y",
-        "text" : "ぱずるだよ",
-        "extra" : "<a class='ui red label'>ランダム大賞</a>"
+        "name" : "オーシャンサンドリヨン",
+        "image" : "Ocean.png",
+        "meta" : "作者 : ？",
+        "text" : "お城を壊しに来る敵を倒して、お城を60秒間守り切れ！",
+        "extra" : ""
       },
       {
-        "name" : "Bubble Pop",
-        "image" : "Bubble.png",
-        "meta" : "作者 : Y",
-        "text" : "ぱずるだよ"
+        "name" : "「箱戦争 -theWarOfBox-」 ver.α.1.0.4",
+        "image" : "WarOfBox_2.png",
+        "meta" : "作者 : Sugiyama",
+        "text" : "いろんな箱を使って戦う(2017白鷺祭に最新版があります)"
+      },
+      {
+        "name" : "TECH-TECH-坊主(テクノとは言ってないMix)",
+        "image" : "TECH.png",
+        "meta" : "作者 : ？",
+        "text" : "TECH-TECH-坊主(テクノとは言ってないMix)"
       }
     ]
   },
   {
-    "name" : "友好祭 in 2017",
-    "src" : "",
+    "name" : "白鷺祭 in 2017",
+    "src" : "https://1drv.ms/f/s!Av_iqVFbLIKghig0vwny8NzI75EI",
     "works" : [
       {
-        "name" : "Bubble Pop",
-        "image" : "Ocean.png",
-        "meta" : "作者 : Y",
-        "text" : "ぱずるだよ"
+        "name" : "「箱戦争 -theWarOfBox-」 ver.α.1.0.5",
+        "image" : "WarOfBox_3.png",
+        "meta" : "作者 : Sugiyama",
+        "text" : "　いろんな箱を使って戦う。(2017友好祭の作品のアップデート版です)"
       },
       {
         "name" : "Bubble Pop",
-        "image" : "ss.png",
-        "meta" : "作者 : Y",
-        "text" : "ぱずるだよ"
+        "image" : "Bubble.png",
+        "meta" : "作者 : Sugiyama",
+        "text" : "画面上の数字に足し算・掛け算を行うことで、画面上の数字を全て消そう。<br/>自分でステージを作れるエディットモードも搭載！"
+      },
+      {
+        "name" : "Destroy All Before U",
+        "image" : "Destroy.jpg",
+        "meta" : "作者 : ？",
+        "text" : "わーい！"
       }
     ]
   }

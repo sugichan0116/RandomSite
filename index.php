@@ -23,7 +23,7 @@
           $page .= "home";
         }
         if(file_exists($page."/")) {
-          $page = "./assets/workcontent.php";
+          $page = "./assets/works.php";
           $name = "works";
         } else {
           $page .= ".html";
