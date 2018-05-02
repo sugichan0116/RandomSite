@@ -6,7 +6,42 @@
     <p><a href="http://www.opuappnavi.com/">OPUアプリNavi</a>さんとの合同ハッカソンでランダム部員チームが作った作品です。</p>
   </div>
   <div class="ui divider"></div>
-  <table class="ui celled inverted table">
+  <script type="text/javascript">
+    $(function() {
+      $.getJSON("source/works/download.json", function(json) {
+        let html = "";
+        const keys = ["yuko", "sagi", "hack"];
+
+        json.forEach(function(entry) {
+          let rowHtml = "";
+          rowHtml += `<td>${entry.name}</td>`;
+          for(let key of keys) {
+            let src = entry.link[key];
+            console.log(key, src);
+            if(src != undefined) {
+              rowHtml +=
+                `<td>
+                  <button class="ui positive right labeled icon button" onClick="window.open('${src}')">
+                    <i class="right arrow icon"></i>
+                    DownLoad
+                  </button>
+                </td>`;
+            } else {
+              rowHtml += `<td></td>`;
+            }
+          }
+          html += `<tr>${rowHtml}</tr>`;
+        });
+        console.log(html);
+        $('#downloadTable')
+          .find('tbody')
+          .append(html)
+        ;
+      });
+
+    });
+  </script>
+  <table class="ui celled inverted table" id="downloadTable">
     <thead>
       <tr><th>公開</th>
       <th>友好祭</th>
@@ -14,171 +49,6 @@
       <th>ハッカソン</th>
     </tr></thead>
     <tbody>
-      <tr>
-        <td>2016年</td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('https://1drv.ms/f/s!Av_iqVFbLIKghiTJ_2ZjsMM2LaO6')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('https://1drv.ms/f/s!Av_iqVFbLIKghhPWjSkvXaykdAuD')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('https://1drv.ms/f/s!Av_iqVFbLIKghhyeoOp1QEParkAl')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>2015年</td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('https://onedrive.live.com/redir?resid=A0822C5B51A9E2FF!760&authkey=!ALUg_-Qz2JlZC-w&ithint=folder%2c')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('https://onedrive.live.com/redir?resid=A0822C5B51A9E2FF!772&authkey=!APUrv0X_A-Gz8s0&ithint=folder%2c')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-
-        </td>
-      </tr>
-      <tr>
-        <td>20年</td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-
-        </td>
-      </tr>
-      <tr>
-        <td>20年</td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-
-        </td>
-      </tr>
-      <tr>
-        <td>20年</td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-
-        </td>
-      </tr>
-      <tr>
-        <td>20年</td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-
-        </td>
-      </tr>
-      <tr>
-        <td>20年</td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-
-        </td>
-      </tr>
-      <tr>
-        <td>20年</td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-
-        </td>
-      </tr>
-      <tr>
-        <td>20年</td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-          <button class="ui positive right labeled icon button" onClick="window.open('')">
-            <i class="right arrow icon"></i>
-            DownLoad
-          </button>
-        </td>
-        <td>
-
-        </td>
-      </tr>
 
     </tbody>
   </table>
