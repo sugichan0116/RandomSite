@@ -15,20 +15,28 @@
     </style>
     <div class="ui main text container" id="article">
       <?php
+        $page = "./source/";
+        $name = "";
         if(isset($_GET['page'])) {
-          $page = $_GET['page'];
+          $page .= $name = $_GET['page'];
         } else {
-          $page = "home";
+          $page .= "home";
         }
-        include("./source/$page.html");
+        if(file_exists($page."/")) {
+          $page = "./assets/workcontent.php";
+          $name = "works";
+        } else {
+          $page .= ".html";
+        }
+        include($page);
        ?>
     </div>
     <script type="text/javascript">
-      $('<?php echo "#${page}" ?>')
+      $('<?php echo "#${name}" ?>')
         .addClass('active')
       ;
       $('title')
-        .prepend("<?php echo "${page}" ?> | ")
+        .prepend("<?php echo "${name}" ?> | ")
       ;
     </script>
   </body>

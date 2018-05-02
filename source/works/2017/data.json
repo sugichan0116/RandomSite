@@ -1,0 +1,39 @@
+[
+  {
+    "name" : "白鷺祭 in 2017",
+    "src" : "",
+    "works" : [
+      {
+        "name" : "Bubble Pop",
+        "image" : "Bubble.png",
+        "meta" : "作者 : Y",
+        "text" : "ぱずるだよ",
+        "extra" : "<a class='ui red label'>ランダム大賞</a>"
+      },
+      {
+        "name" : "Bubble Pop",
+        "image" : "Bubble.png",
+        "meta" : "作者 : Y",
+        "text" : "ぱずるだよ"
+      }
+    ]
+  },
+  {
+    "name" : "友好祭 in 2017",
+    "src" : "",
+    "works" : [
+      {
+        "name" : "Bubble Pop",
+        "image" : "Ocean.png",
+        "meta" : "作者 : Y",
+        "text" : "ぱずるだよ"
+      },
+      {
+        "name" : "Bubble Pop",
+        "image" : "ss.png",
+        "meta" : "作者 : Y",
+        "text" : "ぱずるだよ"
+      }
+    ]
+  }
+]
