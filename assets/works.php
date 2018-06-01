@@ -5,10 +5,42 @@
   $arr = json_decode($json, true);
   foreach ($arr as $fes) {
     $content = "";
+
+    $linkState = "positive";
+    $linkAttr = <<<T
+    onClick="window.open('{$fes['src']}')";
+T;
+    if(array_key_exists('src', $fes)) {
+      $fes += array('src' => "" );
+    }
+    if($fes['src'] == "") {
+      $linkState = "disable";
+      $linkAttr = "";
+    }
+
     foreach ($fes['works'] as $work) {
       $work['image'] = $dirPath.$work['image'];
+      if(array_key_exists('text', $work) == false) {
+        $work += array('text' => "");
+      }
       if(array_key_exists('extra', $work) == false) {
         $work += array('extra' => "");
+      }
+      if(array_key_exists('tags', $work) == true) {
+        $tagsText = "";
+        $colors = array(
+          "Game" => "red",
+          "Music" => "blue",
+          "Art" => "orange",
+          "Service" => "green");
+        foreach ($work['tags'] as $tag) {
+          $color = "";
+          foreach ($colors as $key => $value) {
+            if($key == $tag) $color = $value;
+          }
+          $tagsText .= "<a class='ui tag ${color} label'>${tag}</a>  ";
+        }
+        $work['extra'] = $tagsText.$work['extra'];
       }
       $content .= <<<EOT
       <div class="item">
@@ -33,7 +65,7 @@ EOT;
     echo <<<DIV
     <div class="ui piled segment very padded">
       <h2>{$fes['name']}</h2>
-      <button class="ui huge positive right labeled icon button" onClick="window.open('{$fes['src']}')">
+      <button class="ui huge ${linkState} right labeled icon button" ${linkAttr}>
         <i class="right arrow icon"></i>
         DownLoad
       </button>

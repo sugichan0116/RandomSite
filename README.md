@@ -6,7 +6,11 @@
 
 ./source/history.json
 
+を更新
+
 ### 作品追加
+
+フォルダーを作成
 
 例)2000年版
 ./source/works/2000/
@@ -17,10 +21,9 @@
 - image2.jpg
 などを追加
 
-リンクを
-./assets/menu.html
-./source/works/list.html
-で更新・追加
+さらに記事として管理ファイルに追加
+
+./source/works/articles.json
 
 ### data.json
 このファイルのフォーマット

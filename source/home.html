@@ -8,7 +8,7 @@
 <div class="ui center aligned padded grid">
   <div class="row">
     <div class="six wide column">
-      <img src="./source/image.jpg">
+      <img src="./source/image.jpg" id="work-image">
     </div>
     <div class="ten wide green column" onClick="location.href='?page=intro'">
       <h2 class="ui inverted header">
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="six wide green column">
-      <img src="./source/image2.jpg" alt="">
+      <img src="./source/image2.jpg" id="work-image2">
     </div>
   </div>
 </div>
@@ -90,3 +90,21 @@
 
   </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    let workPath = "source/works/";
+    $.getJSON(workPath + "articles.json", function(json) {
+      let articlePath = workPath + json[0].href + "/";
+      $.getJSON(articlePath + "data.json", function (article) {
+        let works = article[0]["works"];
+        $('#work-image')
+          .attr("src", articlePath + works[Math.floor(Math.random() * works.length)].image)
+        ;
+        $('#work-image2')
+          .attr("src", articlePath + works[Math.floor(Math.random() * works.length)].image)
+        ;
+      });
+
+    });
+  });
+</script>

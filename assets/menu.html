@@ -7,7 +7,7 @@
         <div class="item ui dropdown">
           Works<i class="dropdown icon"></i>
           <div class="menu">
-            <a class="item" href="?page=works/2017">最新作</a>
+            <a class="item" href="?page=works/latest" id="latest-article">最新作</a>
             <a class="item" href="?page=works/list">過去作品リスト</a>
           </div>
         </div>
@@ -26,3 +26,13 @@
     </h1>
   </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $.getJSON("source/works/articles.json", function(json) {
+
+      $('#latest-article')
+        .attr("href", "?page=works/" + json[0].href)
+      ;
+    });
+  });
+</script>

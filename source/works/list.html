@@ -7,20 +7,30 @@
 </div>
 <div class="ui stacked very padded secondary segment">
   <h2>公開作品リスト</h2>
-  <div class="ui list massive divided">
-    <a class="item" href="?page=works/2017">
-      <i class="triangle right icon"></i>
-      <div class="content">
-        <div class="header">2017年作品集</div>
-        <div class="description">友好祭＆白鷺祭出展作品のダウンロードページ</div>
-      </div>
-    </a>
-    <a class="item" href="?page=works/archive">
-      <i class="right triangle icon"></i>
-      <div class="content">
-        <div class="header">アーカイブ</div>
-        <div class="description">2001年～2016年作品のダウンロードページ</div>
-      </div>
-    </a>
+  <div class="ui list massive divided" id="article-list">
+
   </div>
+  <script type="text/javascript">
+    $(function() {
+      $.getJSON("source/works/articles.json", function(json) {
+        let html = "";
+        const keys = ["header", "description", "href"];
+
+        json.forEach(function(entry) {
+          html +=
+            `<a class="item" href="?page=works/${entry.href}">
+              <i class="triangle right icon"></i>
+              <div class="content">
+                <div class="header">${entry.header}</div>
+                <div class="description">${entry.description}</div>
+              </div>
+            </a>`;
+        });
+        $('#article-list')
+          .prepend(html)
+        ;
+      });
+
+    });
+  </script>
 </div>

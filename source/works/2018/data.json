@@ -1,0 +1,107 @@
+[
+  {
+    "name" : "友好祭 in 2018",
+    "src" : "",
+    "works" : [
+      {
+        "name" : "足場メーカー2",
+        "image" : "ashiba.png",
+        "meta" : "作者 : nose",
+        "text" : "去年の作品のメジャーアップデートです．操作性が向上し，ギミックが増えました",
+        "tags" : ["Game", "Puzzle"],
+        "extra" : ""
+      },
+      {
+        "name" : "Colors",
+        "image" : "colors.PNG",
+        "meta" : "作者 : GANKAi",
+        "tags" : ["Music"]
+      },
+      {
+        "name" : "Dual Reversi",
+        "image" : "dual.png",
+        "meta" : "作者 : Sugiyama",
+        "tags" : ["Game"]
+      },
+      {
+        "name" : "Emotter",
+        "image" : "emo.png",
+        "meta" : "作者 : Masaharu Kato",
+        "tags" : ["Service", "Twitter"]
+      },
+      {
+        "name" : "Go Ahead",
+        "image" : "goahead.png",
+        "meta" : "作者 : Sugiyama",
+        "tags" : ["Game"]
+      },
+      {
+        "name" : "Kakukaku Bomber",
+        "image" : "kakukaku.png",
+        "meta" : "作者 : Mr.ボンバー太郎",
+        "tags" : ["Game"]
+      },
+      {
+        "name" : "Matsuri",
+        "image" : "matsuri.PNG",
+        "meta" : "作者 : GANKAi",
+        "tags" : ["Music"]
+      },
+      {
+        "name" : "mushroom Slime",
+        "image" : "slime.png",
+        "meta" : "作者 : Sugiyama",
+        "tags" : ["Game"]
+      },
+      {
+        "name" : "法子のドーナツもぐもぐタイム",
+        "image" : "noriko.png",
+        "meta" : "作者 : 森　優斗",
+        "tags" : ["Game"]
+      },
+      {
+        "name" : "'PSYSHOCK'_CAN_BE_YUKARI3",
+        "image" : "yukari.png",
+        "meta" : "作者 : RANDOM Sound Team(Mt.L vs GANKAi) feat. ゆかりさん大好きマン♡結月ゆかり",
+        "tags" : ["Music"]
+      },
+      {
+        "name" : "Slider",
+        "image" : "slider.png",
+        "meta" : "作者 : Matsuda Yasuhiro",
+        "tags" : ["Game"]
+      },
+      {
+        "name" : "Snaketruggle",
+        "image" : "snake.png",
+        "meta" : "作者 : Sugiyama",
+        "tags" : ["Game"],
+        "extra" : "<a class='ui positive right labeled icon button' href='https://sugichan0116.github.io/snaketruggle/'><i class='play icon'></i>Play</a>"
+      },
+      {
+        "name" : "ただの避けゲー",
+        "image" : "yokege.png",
+        "meta" : "作者 : ゆきずりの山口",
+        "tags" : ["Game"]
+      },
+      {
+        "name" : "ウイルスバトル",
+        "image" : "virus.png",
+        "meta" : "作者 : Ame",
+        "tags" : ["Game"]
+      },
+      {
+        "name" : "パリピッピゲーム",
+        "image" : "party.png",
+        "meta" : "作者 : エキゾチック太郎＠我が道をゴーイングV",
+        "tags" : ["Game"]
+      },
+      {
+        "name" : "ロシアンルーレット",
+        "image" : "roshia.png",
+        "meta" : "作者 : 酒元純平",
+        "tags" : ["Game"]
+      }
+    ]
+  }
+]
