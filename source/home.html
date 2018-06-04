@@ -1,13 +1,51 @@
-<div class="ui piled segment very padded">
-  <h2><i class="icon home"></i>ホーム</h2>
-  <div class="ui divider"></div>
-  <p>大阪府立大学コンピュータクラブ「コンピュータハウスランダム」の</p>
-  <p>ウェブサイトへようこそ！</p>
-</div>
+<style>
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  @media screen and (max-width: 800px) {
+    .for-tablet {
+      display: none !important;
+    }
+  }
+</style>
+<h2 class="ui center aligned icon header">
+  <i class="circular home icon"></i>
+  Home
+</h2>
 <div class="ui divider"></div>
+<div class="ui piled segment">
+  <div class="ui padded basic segment">
+    <p>大阪府立大学コンピュータクラブ「コンピュータハウスランダム」の</p>
+    <p>ウェブサイトへようこそ！</p>
+  </div>
+</div>
+<div class="ui padded divider"></div>
 <div class="ui center aligned padded grid">
+  <h2 class="ui center aligned icon header for-browser">
+    <i class="circular paper plane outline icon"></i>
+    Infomation
+  </h2>
   <div class="row">
-    <div class="six wide column">
+    <div class="six wide column for-tablet">
       <img src="./source/image.jpg" id="work-image">
     </div>
     <div class="ten wide green column" onClick="location.href='?page=intro'">
@@ -56,15 +94,39 @@
         </h2>
       </div>
     </div>
-    <div class="six wide green column">
+    <div class="six wide green column for-tablet">
       <img src="./source/image2.jpg" id="work-image2">
     </div>
   </div>
 </div>
-<div class="ui divider"></div>
-<div class="ui grid">
+<div class="ui padded divider"></div>
+<div class="ui center aligned padded grid for-tablet">
+  <h2 class="ui center aligned icon header">
+    <i class="circular users icon"></i>
+    最新の作品
+  </h2>
+  <!-- Slider main container -->
+  <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper" id="photos">
+
+      </div>
+
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<div class="ui padded divider"></div>
+<div class="ui padded grid">
+  <h2 class="ui center aligned icon header">
+    <i class="circular bullhorn icon"></i>
+    Announcement
+  </h2>
   <div class="row">
-    <div class="ten wide column">
+    <div class="sixteen wide column">
       <div class="ui stacked very padded secondary segment">
         <a class="ui right floated button" href="?page=link">お問い合わせ</a>
         <h2><i class="icon map pin"></i>アクセス</h2>
@@ -74,12 +136,12 @@
         <p><i class="icon eye"></i>コンタクト:部室に立ち寄る・TwitterのDM・Gmail</p>
       </div>
     </div>
-    <div class="six wide column">
-      <div class="ui basic segment">
+    <!-- <div class="six wide column for-tablet">
+      <div class="ui basic segment for-tablet">
         <a class="twitter-timeline" height="240px" data-theme="dark" data-chrome=”noheader” href="https://twitter.com/c_h_random?ref_src=twsrc%5Etfw">Tweets by c_h_random</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 <div class="ui segment tertiary very padded">
@@ -97,12 +159,79 @@
       let articlePath = workPath + json[0].href + "/";
       $.getJSON(articlePath + "data.json", function (article) {
         let works = article[0]["works"];
+        let iterator = (() => {
+          let i = Math.floor(Math.random() * works.length);
+          return () => {
+            i = ++i % works.length;
+            return i;
+          };
+        })();
+        let getWorkData = () => {
+          return works[iterator()];
+        }
+        let getPath = () => {
+          return articlePath + getWorkData().image;
+        }
+
         $('#work-image')
-          .attr("src", articlePath + works[Math.floor(Math.random() * works.length)].image)
+          .attr("src", getPath())
         ;
         $('#work-image2')
-          .attr("src", articlePath + works[Math.floor(Math.random() * works.length)].image)
+          .attr("src", getPath())
         ;
+        let text = "";
+        for (var i = 0; i < 12; i++) {
+          let data = getWorkData(),
+              src = articlePath + data.image,
+              meta = data.meta,
+              size = 8;
+          let w = 0;
+          for (let i = 0; i < meta.length; i++) {
+            w += meta.charCodeAt(i) <= 255 ? 0.5 : 1;
+            if(w > size) {
+              meta = meta.substr(0, i) + "...";
+              break;
+            }
+          }
+          data.meta = meta;
+          // text += `<div class="swiper-slide"><img src="${src}" class="ui small image"></div>`;
+          text += `
+            <div class="swiper-slide">
+              <div class="ui card">
+                <div class="image">
+                  <img src="${src}">
+                </div>
+                <div class="content">
+                  <a class="header">
+                    ${data.name}
+                  </a>
+                  <div class="meta">
+                    ${data.meta}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+        $('#photos')
+          .append(text)
+        ;
+
+        var swiper = new Swiper('.swiper-container', {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          slidesPerGroup: 3,
+          loop: true,
+          loopFillGroupWithBlank: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
       });
 
     });

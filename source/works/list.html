@@ -1,3 +1,8 @@
+<h2 class="ui center aligned icon header">
+  <i class="circular map signs icon"></i>
+  Collection List
+</h2>
+<div class="ui divider"></div>
 <div class="ui piled segment very padded">
   <h2><i class="icon cloud download"></i>作品公開</h2>
   <div class="ui divider"></div>
@@ -5,6 +10,7 @@
   <p>部員のオリジナル作品が公開されています</p>
   <p>ゲームや音楽，イラストを「OneDrive」でダウンロードできます！</p>
 </div>
+<div class="ui divider"></div>
 <div class="ui stacked very padded secondary segment">
   <h2>公開作品リスト</h2>
   <div class="ui list massive divided" id="article-list">
@@ -19,7 +25,7 @@
         json.forEach(function(entry) {
           html +=
             `<a class="item" href="?page=works/${entry.href}">
-              <i class="triangle right icon"></i>
+              <i class="triangle green right icon"></i>
               <div class="content">
                 <div class="header">${entry.header}</div>
                 <div class="description">${entry.description}</div>

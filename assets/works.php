@@ -3,6 +3,13 @@
   $json = file_get_contents($dirPath."/data.json");
   $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
   $arr = json_decode($json, true);
+  echo <<< EOT
+  <h2 class="ui center aligned icon header">
+    <i class="circular book icon"></i>
+    Collection
+  </h2>
+  <div class="ui divider"></div>
+EOT;
   foreach ($arr as $fes) {
     $content = "";
 

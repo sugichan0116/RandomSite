@@ -20,7 +20,7 @@
         if(isset($_GET['page'])) {
           $page .= $name = $_GET['page'];
         } else {
-          $page .= "home";
+          $page .= "enter";
         }
         if(file_exists($page."/")) {
           $page = "./assets/works.php";
@@ -31,13 +31,22 @@
         include($page);
        ?>
     </div>
-    <script type="text/javascript">
-      $('<?php echo "#${name}" ?>')
-        .addClass('active')
-      ;
-      $('title')
-        .prepend("<?php echo "${name}" ?> | ")
-      ;
-    </script>
+    <?php
+      if(isset($name) && $name != "") {
+
+        print <<< EOT
+        <script type="text/javascript">
+
+          $('#${name}')
+            .addClass('active')
+          ;
+          $('title')
+            .prepend("${name} | ")
+          ;
+        </script>
+EOT;
+      }
+     ?>
+
   </body>
 </html>

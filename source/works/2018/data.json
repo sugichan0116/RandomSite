@@ -39,7 +39,8 @@
         "name" : "Kakukaku Bomber",
         "image" : "kakukaku.png",
         "meta" : "作者 : Mr.ボンバー太郎",
-        "tags" : ["Game"]
+        "tags" : ["Game"],
+        "extra" : "<a class='ui positive right labeled icon button' href='http://ec2-54-64-76-155.ap-northeast-1.compute.amazonaws.com/kada/KakukakuBomber/index.html'><i class='play icon'></i>Play</a>"
       },
       {
         "name" : "Matsuri",
@@ -54,13 +55,7 @@
         "tags" : ["Game"]
       },
       {
-        "name" : "法子のドーナツもぐもぐタイム",
-        "image" : "noriko.png",
-        "meta" : "作者 : 森　優斗",
-        "tags" : ["Game"]
-      },
-      {
-        "name" : "'PSYSHOCK'_CAN_BE_YUKARI3",
+        "name" : "'PSYSHOCK' CAN BE YUKARI3",
         "image" : "yukari.png",
         "meta" : "作者 : RANDOM Sound Team(Mt.L vs GANKAi) feat. ゆかりさん大好きマン♡結月ゆかり",
         "tags" : ["Music"]
